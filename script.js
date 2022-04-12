@@ -9,16 +9,28 @@ const puppeteer = require("puppeteer");
 
   await page.goto("http://127.0.0.1:5500/index.html?");
 
-  for (let i = 0; i < data.length; i++) {
-    await page.type("#testName", data[i].Name);
-    await page.type("#testEmail", data[i].Email);
-    await page.type("#testSupervisor", data[i].SupervisorID);
-    await page.type("#testRole", data[i].Role);
-    await page.screenshot({ path: "example" + [i] + ".png" });
+  // for (let i = 0; i < data.length; i++) {
+  //   await page.type("#testName", data[i].Name);
+  //   await page.type("#testEmail", data[i].Email);
+  //   await page.type("#testSupervisor", data[i].SupervisorID);
+  //   await page.type("#testRole", data[i].Role);
+  //   await page.screenshot({ path: "example" + [i] + ".png" });
+  //   await page.click("#submitButton");
+  //   console.log("Form Submitted");
+  //   await page.waitForTimeout(1000);
+  // }
+
+  for (const [index, element] of data.entries()) {
+    await page.type("#testName", element.Name);
+    await page.type("#testEmail", element.Email);
+    await page.type("#testSupervisor", element.SupervisorID);
+    await page.type("#testRole", element.Role);
+    await page.screenshot({ path: "example" + index + ".png" });
     await page.click("#submitButton");
     console.log("Form Submitted");
     await page.waitForTimeout(1000);
   }
+
   console.log("Inputs filled!");
 
   console.log("Puppeteer shutting down");
