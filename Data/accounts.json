@@ -1,0 +1,20 @@
+[
+ {
+  "Name": "Radu ",
+  "Email": "radu@radu.com",
+  "SupervisorID": "f1234",
+  "Role": "A"
+ },
+ {
+  "Name": "Kanika",
+  "Email": "kanika@kanika.com",
+  "SupervisorID": "f2345",
+  "Role": "B"
+ },
+ {
+  "Name": "Hans",
+  "Email": "hans@hans.com",
+  "SupervisorID": "f3456",
+  "Role": "C"
+ }
+]
